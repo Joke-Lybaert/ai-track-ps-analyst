@@ -1,0 +1,17 @@
+{
+  "name": "Meridian requirements workspace (markdown only, no toolchain needed)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "bierner.markdown-mermaid",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  },
+  "hostRequirements": {
+    "cpus": 2
+  }
+}
