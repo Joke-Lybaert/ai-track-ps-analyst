@@ -1,31 +1,31 @@
 # Block 2 Prompt Ladders
-**11:15. 12:45 · Pair AC and Pair BD work in parallel**
+**11:15-12:45 · Pair AC and Pair BD work in parallel**
 
 Pairs have rotated. You are now working with someone you haven't paired with today yet.
 Before you write a single prompt: spend 5 minutes reading what your teammates produced in
-Block 1. You will be building on it. and possibly fixing it.
+Block 1. You will be building on it, and possibly fixing it.
 
 ---
 
-## Pair AC. Business rules catalogue & exception coverage
+## Pair AC: Business rules catalogue & exception coverage
 
-Your job: formalise every business rule buried in the source material. especially the
-contradictory ones. into an explicit, defensible rules catalogue, then expand the backlog
+Your job: formalise every business rule buried in the source material, especially the
+contradictory ones, into an explicit, defensible rules catalogue, then expand the backlog
 to cover the exceptions most teams miss.
 
 ---
 
-### Before you start. read the backlog
+### Before you start: read the backlog
 
 Open Pair AB's backlog and acceptance criteria from Block 1. Do not rewrite anything yet.
 Just read it, and check it against `open-questions.md`.
 
 Ask yourselves: for every business rule stated in the source material, is there a story that
-enforces it? If not, that's your first task. not a prompt task, a reading task.
+enforces it? If not, that's your first task: not a prompt task, a reading task.
 
 ---
 
-### Prompt 1. Extract the business rules
+### Prompt 1: Extract the business rules
 
 ```
 Here is the full source material for a Complaint Management System requirements engagement:
@@ -33,7 +33,7 @@ Here is the full source material for a Complaint Management System requirements 
 [paste all six documents]
 
 Extract every business rule stated or implied in this material. A business rule is a
-constraint the system must enforce. a timeframe, an eligibility condition, a mandatory
+constraint the system must enforce: a timeframe, an eligibility condition, a mandatory
 step, a prohibition.
 
 For each rule:
@@ -50,11 +50,11 @@ Do not resolve conflicts. Just surface them. That is the point of this exercise.
   ~30% of the time")
 - For each conflict, decide: is this something your team resolves with a documented assumption,
   or something that must go to the open-questions log as a blocker? The auto-close conflict
-  should go to the log. it's a genuine policy conflict, not something an FA should decide alone.
+  should go to the log. It's a genuine policy conflict, not something an FA should decide alone.
 
 ---
 
-### Prompt 2. Correct the flawed acceptance criteria
+### Prompt 2: Correct the flawed acceptance criteria
 
 You've been handed three acceptance criteria drafted by a previous session that do not
 correctly reflect the source material. Find them in `flawed-acceptance-criteria.md`
@@ -67,28 +67,28 @@ Here is the actual source material they should be based on.
 [paste the three flawed criteria]
 [paste the relevant source material excerpts]
 
-Each of these three criteria has a factual error relative to the source material. not a
+Each of these three criteria has a factual error relative to the source material: not a
 style issue, an actual mismatch with what a stakeholder said. Find each error, explain what
 is wrong, and rewrite the criterion correctly. Cite the source material for the correction.
 ```
 
 **What to do with the output:**
-- Do not just apply the fix. read the explanation. Each one should teach you something about
+- Do not just apply the fix: read the explanation. Each one should teach you something about
   reading source material precisely rather than trusting a plausible-sounding requirement
 - Confirm all three corrected criteria are internally consistent with your Block 1 backlog
 
 ---
 
-### Prompt 3. Expand coverage: the missed categories
+### Prompt 3: Expand coverage: the missed categories
 
 ```
 The user story backlog so far covers: billing complaints, supply interruptions, contract
 disputes, and general service complaints. The source material also describes a fourth
-category. regulatory complaints. and a business customer segment that may or may not be
+category, regulatory complaints, and a business customer segment that may or may not be
 in scope.
 
 For regulatory complaints:
-Write user stories and acceptance criteria for the escalation flow Priya described. 2-working-day
+Write user stories and acceptance criteria for the escalation flow Priya described: 2-working-day
 escalation to compliance, different handling, different ownership.
 
 For business customers:
@@ -101,12 +101,12 @@ the answer is "in scope" versus "out of scope."
 **What to do with the output:**
 - Check the regulatory complaint stories against Priya's exact words: escalation "within two
   working days of receipt," not five
-- The business customer write-up should NOT resolve the question. if AI tries to just pick
+- The business customer write-up should NOT resolve the question: if AI tries to just pick
   an answer, push back and ask it to write the open question instead
 
 ---
 
-### Prompt 4. Exception flow: extension and escalation
+### Prompt 4: Exception flow: extension and escalation
 
 ```
 Write user stories and full acceptance criteria for:
@@ -122,11 +122,11 @@ must record for audit purposes (remember the five-year retention requirement).
 **What to do with the output:**
 - Check: does the missed-deadline escalation distinguish "missed the 5-day internal target
   with no extension" from "missed the 8-week regulatory obligation"? These require different
-  responses. the regulatory miss requires a letter to the customer about the ombudsman, per Priya.
+  responses: the regulatory miss requires a letter to the customer about the ombudsman, per Priya.
 
 ---
 
-## Pair BD. Agent-mode backlog restructure
+## Pair BD: Agent-mode backlog restructure
 
 Your job: use your AI tool's agent mode to restructure the entire requirements backlog
 in a single coordinated operation. You may not edit individual files manually.
@@ -136,17 +136,17 @@ This block will teach you more about AI agents than any tutorial.
 
 ---
 
-### Before you start. understand what you're doing
+### Before you start: understand what you're doing
 
 Agent mode (available in Copilot Chat via "Agent" mode, or equivalent in your AI tool) can
-read and edit multiple files in a single operation. It is not magic. it operates on the files
+read and edit multiple files in a single operation. It is not magic. It operates on the files
 you have in your workspace, makes a plan, and executes changes step by step.
 
 > **No IDE, and can't install one?** Expect this to be the normal case for most of today, not
 > an exception. Open the Meridian requirements workspace in a free **GitHub Codespace** instead
-> (Code → Codespaces → Create codespace, on the repo's GitHub page. ask your coach for the
-> link). a full VS Code running in your browser, nothing to install. Enable **GitHub Copilot
-> Free** (no credit card needed) for agent mode. capped at 50 requests a month, plenty for one
+> (Code → Codespaces → Create codespace, on the repo's GitHub page; ask your coach for the
+> link), a full VS Code running in your browser, nothing to install. Enable **GitHub Copilot
+> Free** (no credit card needed) for agent mode: capped at 50 requests a month, plenty for one
 > block. Everything below works the same once you're in; `backlog.md`, `glossary.md`,
 > `decisions.md`, and `open-questions.md` are already there waiting from Block 1.
 
@@ -161,15 +161,15 @@ with another agent prompt, not by editing directly. This is how you learn where 
 The requirements backlog produced so far has the following problems (many of these will be
 genuine issues from what Block 1 produced):
 
-1. **Inconsistent story format**. some stories follow "As a... I want... so that...", some don't
-2. **Missing traceability**. some stories have no note on which source document they came from
-3. **Terminology drift**. some stories use terms that don't match the glossary Pair CD built
-4. **Untestable acceptance criteria**. some criteria use vague language that can't be verified
-5. **Orphaned diagram references**. if any story references a flow that isn't in a diagram yet, or vice versa
+1. **Inconsistent story format**: some stories follow "As a... I want... so that...", some don't
+2. **Missing traceability**: some stories have no note on which source document they came from
+3. **Terminology drift**: some stories use terms that don't match the glossary Pair CD built
+4. **Untestable acceptance criteria**: some criteria use vague language that can't be verified
+5. **Orphaned diagram references**: if any story references a flow that isn't in a diagram yet, or vice versa
 
 ---
 
-### Prompt 1. Plan before acting
+### Prompt 1: Plan before acting
 
 Before letting the agent touch any files:
 
@@ -194,16 +194,16 @@ Do not make any changes yet. Just list what needs to change and why.
 
 ---
 
-### Prompt 2. Execute the restructure
+### Prompt 2: Execute the restructure
 
 ```
 Now execute the restructuring plan. Apply all five categories of changes across the entire backlog.
 
 Constraints:
-- Do not change the actual content or meaning of any acceptance criterion. only its clarity
+- Do not change the actual content or meaning of any acceptance criterion: only its clarity
   and testability
 - Do not remove any story without flagging it to me first
-- Do not invent new source document citations. if a story genuinely has no traceable source,
+- Do not invent new source document citations: if a story genuinely has no traceable source,
   flag it, don't fabricate one
 - After each category of changes, pause and list what you changed before moving to the next
 
@@ -212,14 +212,14 @@ then diagram cross-references.
 ```
 
 **What to do with the output:**
-- Watch what the agent does between categories. this is the observable "reasoning" of an agent
+- Watch what the agent does between categories: this is the observable "reasoning" of an agent
 - If it tries to fabricate a source citation for an untraceable story: stop it and tell it why
   that's worse than leaving it flagged
 - Keep a running note: what did the agent change that you didn't expect?
 
 ---
 
-### Prompt 3. Verify nothing broke
+### Prompt 3: Verify nothing broke
 
 ```
 The restructuring is complete. Now verify the backlog is still correct:
@@ -229,7 +229,7 @@ The restructuring is complete. Now verify the backlog is still correct:
 3. Do all traceability notes point to real source material, not fabricated ones?
 4. Is terminology now consistent with the glossary throughout?
 
-List every issue you find. Do not fix anything yet. just list.
+List every issue you find. Do not fix anything yet, just list.
 ```
 
 Then, after reviewing the list:
@@ -240,7 +240,7 @@ Fix all the issues you identified. Apply the fixes now.
 
 ---
 
-### Prompt 4. Reflect on the agent
+### Prompt 4: Reflect on the agent
 
 This is not an AI prompt. This is a discussion prompt for your pair.
 
@@ -267,7 +267,7 @@ Before lunch at 12:45, your team should be able to answer yes to:
 - [ ] Extension and escalation flows have full acceptance criteria
 
 **Pair BD:**
-- [ ] Agent restructure completed. all five categories addressed
+- [ ] Agent restructure completed: all five categories addressed
 - [ ] No fabricated source citations exist in the backlog
 - [ ] `decisions.md` updated with agent reflection answers
 

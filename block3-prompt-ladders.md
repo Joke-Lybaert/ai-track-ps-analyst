@@ -1,17 +1,17 @@
 # Block 3 Prompt Ladders
-**13:45. 15:15 · Pair AD and Pair BC work in parallel**
+**13:45-15:15 · Pair AD and Pair BC work in parallel**
 
 Final pair rotation. This block goes deeper than anything you've done today.
-The goal is not to finish everything. it's to experience what these tools actually feel like
+The goal is not to finish everything. It's to experience what these tools actually feel like
 and where they genuinely change the way you work.
 
 ---
 
-## Pair AD. MCP grounding: regulation you can trust
+## Pair AD: MCP grounding: regulation you can trust
 
 You are going to connect to a hosted MCP server and use it to give your AI tool real,
 grounded context from Meridian's actual regulatory framework document. This is the foundation
-of how serious AI-assisted requirements work should be done. not relying on the model's
+of how serious AI-assisted requirements work should be done: not relying on the model's
 training data about "typical" energy sector regulation, but feeding it the actual source of truth.
 
 ---
@@ -25,7 +25,7 @@ every time, you give the AI a live connection to the information it needs.
 Today you'll connect to a hosted MCP server that serves Meridian's actual regulatory standards
 extract, then use it to audit your team's requirements backlog. When you ask a question, the AI
 can call that server to read the real document and ground its answer in it, rather than making
-things up from training data. which matters enormously in regulated domains. An AI that has
+things up from training data, which matters enormously in regulated domains. An AI that has
 memorised "typical" energy sector complaint-handling regulation from its training data will
 produce plausible-sounding requirements that may not match what actually applies to Meridian.
 This is exactly the kind of failure mode Module 1 covered: confident, fluent, wrong.
@@ -34,18 +34,18 @@ This is exactly the kind of failure mode Module 1 covered: confident, fluent, wr
 
 ### Setup (do this before prompting)
 
-No local install either way. this is a hosted server, not a local one. Most FAs won't have a
+No local install either way: this is a hosted server, not a local one. Most FAs won't have a
 code editor installed, so start with the first option below unless you already have one.
 
-**No IDE (the common case). free Claude.ai account, browser only:**
+**No IDE (the common case), free Claude.ai account, browser only:**
 1. Create a free account at [claude.ai](https://claude.ai) if you don't have one.
 2. Go to **Customize → Connectors → Add custom connector**.
 3. Paste in the hosted MCP server URL (ask your coach) and click **Add**. No authentication step
-   needed. the server is open, nothing to log into.
+   needed: the server is open, nothing to log into.
 4. In a new chat, click **+** → **Connectors**, and toggle `ai-track-standards` on for that
    conversation.
 
-Free accounts are limited to one custom connector. that's exactly what this needs, so no paid
+Free accounts are limited to one custom connector: that's exactly what this needs, so no paid
 plan required. Wherever a prompt below says "call read_document," Claude will use the connector.
 
 **If you do have VS Code or another Copilot-enabled editor:** open `.vscode/mcp.json` in your
@@ -55,17 +55,17 @@ project (or run **MCP: Add Server** from the Command Palette) and add:
   "servers": {
     "ai-track-standards": {
       "type": "http",
-      "url": "<hosted MCP server URL. ask your coach>"
+      "url": "<hosted MCP server URL, ask your coach>"
     }
   }
 }
 ```
-Requires VS Code 1.101 or later. Verify by opening Copilot Chat in agent mode. you should see
+Requires VS Code 1.101 or later. Verify by opening Copilot Chat in agent mode. You should see
 `ai-track-standards` listed as an available tool, exposing `list_documents` and `read_document`.
 
 ---
 
-### Prompt 1. Verify the connection
+### Prompt 1: Verify the connection
 
 ```
 Using the ai-track-standards MCP server, call read_document with id "meridian-regulatory" to
@@ -83,7 +83,7 @@ The difference matters. This is the difference between grounded AI and hallucina
 
 ---
 
-### Prompt 2. Audit the backlog against the regulation
+### Prompt 2: Audit the backlog against the regulation
 
 ```
 Using the ai-track-standards MCP server's read_document tool (id "meridian-regulatory") to
@@ -102,13 +102,13 @@ Sort findings by severity: Critical → Major → Minor.
 
 **What to do with the output:**
 - Check: are the quoted clauses actually in the Meridian regulatory standards document, or did
-  the AI invent them? This is easy to verify. open the document and check.
+  the AI invent them? This is easy to verify: open the document and check.
 - This is a live demonstration of grounded vs. ungrounded output. Note down any invented clause
   references for Retro 3.
 
 ---
 
-### Prompt 3. Fix the critical findings
+### Prompt 3: Fix the critical findings
 
 ```
 From the audit, take all Critical findings and fix them in the backlog now.
@@ -119,14 +119,14 @@ For each fix:
 
 ---
 
-### Prompt 4. Expand the use of grounding
+### Prompt 4: Expand the use of grounding
 
 Now that you've seen MCP working with a hosted server, think about what else this could
 connect to on a real engagement. This is a discussion + research prompt:
 
 ```
 What other MCP servers or grounding approaches would be useful for a functional analyst
-working on a requirements engagement at a client site. think about connecting to a client's
+working on a requirements engagement at a client site: think about connecting to a client's
 actual policy documents, a regulatory database, a wiki, or a ticketing system.
 
 Search for and list what's realistically available today, with:
@@ -136,7 +136,7 @@ Search for and list what's realistically available today, with:
 ```
 
 **What to do with the output:**
-- Verify anything listed actually exists. don't take the AI's word for it
+- Verify anything listed actually exists: don't take the AI's word for it
 - Note: this is a good test of hallucination risk. Grounding tools for non-code domains are
   newer and less standardised than code-focused ones, so the model's training data may be
   incomplete or outdated.
@@ -144,9 +144,9 @@ Search for and list what's realistically available today, with:
 
 ---
 
-## Pair BC. AI-assisted structured review: the quality gate
+## Pair BC: AI-assisted structured review: the quality gate
 
-Your job: use AI to produce a structured review of the entire requirements package. the kind
+Your job: use AI to produce a structured review of the entire requirements package: the kind
 of review a senior FA would do before presenting to a client steering committee.
 This teaches you to use AI as a reviewer, not just a generator.
 
@@ -160,14 +160,14 @@ Your job is to tell the difference.
 You are acting as the engagement's senior FA. Before the requirements package goes in front
 of Meridian's steering committee, you need to produce:
 
-1. A **traceability review**. can every story be traced to a specific stakeholder statement?
-2. A **testability review**. can every acceptance criterion actually be verified?
-3. A **completeness review**. are all business rules from the brief actually reflected?
-4. A **diagram review**. do the process diagrams cover exceptions, not just the happy path?
+1. A **traceability review**: can every story be traced to a specific stakeholder statement?
+2. A **testability review**: can every acceptance criterion actually be verified?
+3. A **completeness review**: are all business rules from the brief actually reflected?
+4. A **diagram review**: do the process diagrams cover exceptions, not just the happy path?
 
 ---
 
-### Prompt 1. Traceability review
+### Prompt 1: Traceability review
 
 ```
 Review this user story backlog for traceability.
@@ -195,7 +195,7 @@ Be exhaustive. Check every single story.
 
 ---
 
-### Prompt 2. Testability review
+### Prompt 2: Testability review
 
 ```
 Review the acceptance criteria in this backlog for testability.
@@ -211,12 +211,12 @@ Be strict. "The system should handle this appropriately" style language always f
 ```
 
 **What to do with the output:**
-- Fix every criterion flagged as untestable. these are real problems, not nitpicks
+- Fix every criterion flagged as untestable: these are real problems, not nitpicks
 - Note how many criteria failed on the first pass. This is useful data for the showcase.
 
 ---
 
-### Prompt 3. Completeness review against business rules
+### Prompt 3: Completeness review against business rules
 
 ```
 Here are the business rules extracted from the source material:
@@ -239,14 +239,14 @@ Be exhaustive. Check every single rule, including the ones marked as conflicts.
 
 **What to do with the output:**
 - Cross-reference every finding. Pay special attention to the auto-close conflict and the
-  resolution timeframe distinction. has the backlog actually kept these as open questions,
+  resolution timeframe distinction: has the backlog actually kept these as open questions,
   or did it quietly resolve them somewhere along the way?
 - If the AI says a rule is covered but you can't find it: ask it to quote the specific story.
   If it can't, it was hallucinating.
 
 ---
 
-### Prompt 4. Diagram exception review
+### Prompt 4: Diagram exception review
 
 ```
 Here is our main process diagram (Mermaid) and any exception flow diagrams we've produced:
@@ -267,11 +267,11 @@ For each gap, describe what should be added.
 **What to do with the output:**
 - Update your diagrams with at least one of these exception paths before the showcase
 - Note which ones the AI itself thought of unprompted versus only found because you asked
-  directly. this is useful data for Retro 3
+  directly: this is useful data for Retro 3
 
 ---
 
-### Prompt 5. Compile the review document
+### Prompt 5: Compile the review document
 
 ```
 Based on the four reviews we've done (traceability, testability, completeness, diagram
@@ -279,7 +279,7 @@ exceptions), produce a single structured review document suitable to send ahead 
 steering committee checkpoint.
 
 Format:
-# Meridian CMS Requirements. Pre-Steering-Committee Review
+# Meridian CMS Requirements: Pre-Steering-Committee Review
 ## Executive Summary (3-4 sentences)
 ## Critical Issues (must resolve before the checkpoint)
 ## Major Issues (should resolve before the checkpoint)
@@ -293,7 +293,7 @@ Be honest. If there are real problems, flag them as blocking.
 
 **What to do with the output:**
 - Save this as your showcase artifact for Retro 3
-- Note the readiness status. and whether you agree with it
+- Note the readiness status, and whether you agree with it
 
 ---
 

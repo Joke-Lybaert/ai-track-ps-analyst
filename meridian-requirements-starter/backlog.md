@@ -1,4 +1,4 @@
-# User Story Backlog. Meridian Complaint Management System
+# User Story Backlog: Meridian Complaint Management System
 
 Started in Block 1, Pair AB's Prompt 2. Organise by epic. Each story should use:
 

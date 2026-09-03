@@ -1,4 +1,4 @@
-# Urgent. Steering Committee Prep
+# Urgent: Steering Committee Prep
 **From:** Engagement Lead
 **To:** FA delivery team
 **Time-sensitive: needed within the hour**
@@ -6,7 +6,7 @@
 ---
 
 Sarah just called. Three things need requirements language and a recommendation before
-tomorrow's steering committee prep meeting. She wants this fast. please don't overthink it,
+tomorrow's steering committee prep meeting. She wants this fast. Please don't overthink it,
 just get me a first draft I can react to.
 
 ---
@@ -33,14 +33,14 @@ Sarah mentioned Meridian is bringing on a third-party fulfilment partner to help
 current backlog of unresolved complaints (about 400 of them). The partner needs complaint
 data to start work Monday. Sarah's suggestion, direct quote from the call:
 
-> "Simplest thing. can we just export the open complaints to a CSV each week and email it
+> "Simplest thing, can we just export the open complaints to a CSV each week and email it
 > to their team lead? They already do this for another client of theirs, it's normal for them."
 
 Write the requirement for this data handoff process.
 
 ---
 
-## 3. Extension approval. reduce the bottleneck
+## 3. Extension approval: reduce the bottleneck
 
 Marc's team has flagged that extension requests sometimes sit with team leaders for a day
 or two before being approved, which eats into the already-tight resolution window. Sarah's
@@ -54,7 +54,7 @@ Write the requirement for this extension workflow, incorporating the 24-hour rul
 
 ---
 
-Please have first drafts of all three back to me within the hour. I know it's tight. do
+Please have first drafts of all three back to me within the hour. I know it's tight. Do
 what you can with AI and flag anything you're not sure about.
 
-. Engagement Lead
+- Engagement Lead

@@ -1,4 +1,4 @@
-# Meridian Energy. Complaint Handling Regulatory Standards Extract
+# Meridian Energy: Complaint Handling Regulatory Standards Extract
 **Internal compliance reference · Version 4.2 · Effective Q1 2025**
 **Prepared by: Priya Nair, Compliance Officer**
 
@@ -16,7 +16,7 @@ All complaints, regardless of category, must be acknowledged to the customer wit
 **2 working days** of receipt. This is a hard regulatory requirement, not an internal
 service standard.
 
-Severity if missed: **Critical**. reportable to the regulator if it becomes a pattern.
+Severity if missed: **Critical**. Reportable to the regulator if it becomes a pattern.
 
 ### 1.2 Acknowledgement content
 The acknowledgement must include: confirmation of receipt, a reference number, expected
@@ -55,7 +55,7 @@ states an intention to escalate externally must be immediately reclassified as a
 
 ### 3.2 Escalation timeframe
 Regulatory complaints must be escalated to the Compliance team within **2 working days**
-of the classification trigger being identified. not the standard 5-day handler workflow.
+of the classification trigger being identified, not the standard 5-day handler workflow.
 
 ### 3.3 Ownership
 Regulatory complaints are managed by Compliance, not by standard complaint handlers, once
@@ -79,9 +79,9 @@ If a customer does not respond to a request for information:
 3. Send a formal notice stating the complaint will be closed in **14 days** unless the
    customer responds
 4. If no response after the 14-day notice period, a handler or team leader must manually
-   review and sign off on closure. this step cannot be automated or skipped
+   review and sign off on closure; this step cannot be automated or skipped
 
-Severity if bypassed: **Critical**. this is the exact failure pattern that led to the
+Severity if bypassed: **Critical**. This is the exact failure pattern that led to the
 prior regulatory fine.
 
 ---
@@ -104,7 +104,7 @@ No component of a complaint record may be deleted, purged, or archived in a way 
 it inaccessible before the 5-year minimum has elapsed, regardless of storage cost or system
 migration plans.
 
-Severity if violated: **Critical**. will block go-live approval from Compliance.
+Severity if violated: **Critical**. Will block go-live approval from Compliance.
 
 ---
 
@@ -112,7 +112,7 @@ Severity if violated: **Critical**. will block go-live approval from Compliance.
 
 ### 6.1 Dedicated path required
 Business customers whose contract value exceeds the designated threshold (threshold to be
-confirmed with the Commercial team. not yet finalised as of this document's publication)
+confirmed with the Commercial team, not yet finalised as of this document's publication)
 must have a dedicated complaint escalation path distinct from the residential flow.
 
 ### 6.2 Interim guidance
@@ -133,7 +133,7 @@ team leader, with a documented reason.
 An extension must never be granted by default, by timeout, or by the absence of a team
 leader response. Absence of a decision is not equivalent to approval. If a team leader does
 not respond to an extension request within a reasonable window, the request must escalate
-further. it must not auto-approve.
+further. It must not auto-approve.
 
 ---
 
