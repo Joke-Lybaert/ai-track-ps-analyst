@@ -40,7 +40,7 @@ code editor installed, so start with the first option below unless you already h
 **No IDE (the common case), free Claude.ai account, browser only:**
 1. Create a free account at [claude.ai](https://claude.ai) if you don't have one.
 2. Go to **Customize → Connectors → Add custom connector**.
-3. Paste in the hosted MCP server URL (ask your coach) and click **Add**. No authentication step
+3. Paste in the hosted MCP server URL (https://ai-track-ps-production.up.railway.app) and click **Add**. No authentication step
    needed: the server is open, nothing to log into.
 4. In a new chat, click **+** → **Connectors**, and toggle `ai-track-standards` on for that
    conversation.
