@@ -9,8 +9,8 @@ tried.
 
 ## What's here
 
-- [`copilot-chat.md`](copilot-chat.md): using an AI chat tool with no coding and no IDE, the
-  default setup for today.
+- [`copilot-chat.md`](copilot-chat.md): which AI chat tool to use today (M365 Copilot, GitHub
+  Copilot, Claude.ai or your own favourite), and how to use it well with no coding and no IDE.
 - [`mermaid.md`](mermaid.md): turning a description into a diagram using plain text, used
   repeatedly through the day.
 - [`claude-ai-custom-connectors.md`](claude-ai-custom-connectors.md): setting up the browser-based

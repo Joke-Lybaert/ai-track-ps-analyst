@@ -14,6 +14,7 @@ After each prompt: read the output critically before using it. If something feel
 > `open-questions.md` are already there for you to fill in as you go, so Block 2's agent-mode
 > exercise has real files to work with later. See `block2-prompt-ladders.md` for the AI-tool
 > side of this same setup (GitHub Copilot Free).
+> Most of the time, you can also use M365 Copilot Chat or Claude.ai in the browser, but they cannot read and edit multiple files at once like GitHub Copilot in agent mode can. If you are using M365 Copilot Chat or Claude.ai, you will need to copy/paste the contents of the files into the chat window to work with them.
 
 ---
 
@@ -36,6 +37,8 @@ Here is all the source material we've gathered so far:
 Explain the domain to me as if I'm a new analyst joining the team.
 Then identify every ambiguity, gap, or contradiction you find across these documents.
 Be specific: quote the conflicting statements directly, don't just say "there are some gaps."
+Use only what is in these documents. If you infer something that is not stated, label it
+explicitly as an inference.
 ```
 
 **What to do with the output:**
@@ -129,7 +132,7 @@ on a condition.
 
 ### Prompt 5: Interrogate the output
 
-This is the most important prompt of the block. Do not skip it.
+This is the most important prompt of the block.
 
 ```
 Review the user story backlog and acceptance criteria you just generated against these
@@ -155,6 +158,41 @@ Facts to check:
 - This is your quality gate. Anything missing needs to be added before the block ends.
 - Note down which facts the AI says are covered but you cannot actually find in a story.
   Those need to be added, not assumed.
+
+---
+
+### Prompt 6: Prepare the stakeholder questions
+
+Only after Prompt 5. Your open-questions log is only useful if someone can answer it.
+Turn it into questions you could actually put to the client.
+
+```
+Here is our open-questions log for this engagement:
+
+[paste open-questions.md]
+
+For each open question:
+1. Name the stakeholder who has to answer it (Sarah Belmans, Marc Devos, Priya Nair,
+   Tom Geerts, or the commercial team), based on the source material. If nobody in the
+   source material can answer it, say so.
+2. Explain in one sentence what the development team cannot build until it is answered.
+3. Write a question funnel for that stakeholder:
+   - 1 open question that lets them explain in their own words
+   - 3 to 5 probing questions that pin down the details (numbers, exceptions, who decides)
+   - 1 closed question that confirms the final answer (yes/no or a specific value)
+
+Do not answer the questions yourself and do not suggest what the answer probably is.
+Group the questions per stakeholder, so each group could be one conversation.
+```
+
+**What to do with the output:**
+- Check every stakeholder assignment against the source material. Some questions have no
+  interviewed owner at all (the business customer threshold points to a commercial team
+  nobody has spoken to yet). Is that visible, or did AI assign it to someone anyway?
+- Some questions need more than one stakeholder. The auto-close conflict is between Sarah on
+  one side and Marc and Priya on the other: asking only one of them does not resolve it.
+- Look for leading questions that quietly pick an answer ("Would 7 days be an acceptable
+  auto-close period?" already assumes Sarah's version). Rewrite them as neutral questions.
 
 ---
 
@@ -228,6 +266,9 @@ with cardinality (one-to-many, many-to-many, etc.).
 **What to do with the output:**
 - Paste the Mermaid output into mermaid.live. Does it render without errors? AI-generated
   Mermaid often has subtle syntax issues. Fix them before moving on
+- Not every notation exists in Mermaid. If you (or the AI) reach for BPMN, a use case diagram
+  or a decision table, check the "What Mermaid can and can't draw" section in
+  `ai-cheat-sheets/mermaid.md` first
 - Check: does the model distinguish a regulatory complaint from a standard complaint, or does
   it treat "category" as a flat, undifferentiated field?
 - Does the model account for the 5-year retention requirement: is there any entity or field
@@ -283,6 +324,7 @@ Before Retro 1 at 11:00, your team should be able to answer yes to:
 - [ ] A first-draft user story backlog exists, organised by epic
 - [ ] Acceptance criteria exist for the core submission and acknowledgement flow
 - [ ] You've run Prompt 5 and know which facts from the source material are not yet reflected
+- [ ] (If you got to it) Prompt 6: stakeholder questions exist for the main open questions
 
 **Pair CD:**
 - [ ] Glossary exists with at least the 10 core terms defined

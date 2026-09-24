@@ -164,6 +164,7 @@ of Meridian's steering committee, you need to produce:
 2. A **testability review**: can every acceptance criterion actually be verified?
 3. A **completeness review**: are all business rules from the brief actually reflected?
 4. A **diagram review**: do the process diagrams cover exceptions, not just the happy path?
+5. A **pre-mortem**: if this package were built exactly as written, how could the project fail?
 
 ---
 
@@ -271,11 +272,47 @@ For each gap, describe what should be added.
 
 ---
 
-### Prompt 5: Compile the review document
+### Prompt 5: Pre-mortem: how could this fail?
 
 ```
-Based on the four reviews we've done (traceability, testability, completeness, diagram
-exceptions), produce a single structured review document suitable to send ahead of a
+Act as a red team reviewing this requirements package before it goes to the client.
+
+[paste the full backlog with acceptance criteria, and open-questions.md]
+
+Here is the source material the package is based on:
+
+[paste all six source documents]
+
+Imagine it is one year from now. The system was built exactly from this package, and the
+project is considered a failure. Give me 10 distinct scenarios that explain why. Cover at
+least:
+- technical failures (integration, data, performance)
+- organisational failures (ownership, adoption, process)
+- legal and regulatory failures
+
+For each scenario:
+1. Describe what went wrong in two sentences
+2. Point to the specific story, acceptance criterion, or missing requirement that caused it
+3. Quote the source material that shows this risk is already knowable today, or say
+   explicitly that the scenario is speculation
+```
+
+**What to do with the output:**
+- Sort the 10 scenarios into three piles: backed by the source material, plausible but
+  speculative, and invented. Expect all three.
+- Did the red team find anything your four structured reviews missed? Tom's email (Salesforce
+  integration, the portal being replaced) is a common blind spot. If it found something new,
+  that's worth sharing at Retro 3.
+- Backed scenarios go into the Critical or Major sections of the review document in the next
+  prompt. Speculative ones can go into the risks register, labelled as speculation.
+
+---
+
+### Prompt 6: Compile the review document
+
+```
+Based on the reviews we've done (traceability, testability, completeness, diagram
+exceptions, pre-mortem), produce a single structured review document suitable to send ahead of a
 steering committee checkpoint.
 
 Format:
@@ -297,6 +334,40 @@ Be honest. If there are real problems, flag them as blocking.
 
 ---
 
+## Finished early? Stretch: wireframe the customer view
+
+For either pair, only once your own ladder is done. This is not a design exercise: a
+wireframe is a quick way to find requirements you haven't written yet.
+
+```
+Sarah wants customers to be able to see where their complaint is. Here are our user stories
+and acceptance criteria for customer-facing complaint tracking:
+
+[paste the relevant stories and acceptance criteria]
+
+Create a low-fidelity wireframe of the customer's complaint status page as a single HTML
+file I can open in a browser. Grey boxes and plain text only: no branding, no colours, no
+images. Focus on what information is shown, in what order, and what the customer can do on
+this page.
+
+Below the wireframe, list every piece of information or behaviour on the page that is NOT
+covered by the stories and acceptance criteria I gave you.
+```
+
+Save the HTML output as a file (for example `status-page.html`) and open it in your browser.
+
+**What to do with the output:**
+- Go through the "not covered" list. Each item is either a missing story or criterion, or
+  something the AI invented. Which is which?
+- Check it against Tom's email: where did the AI assume this page lives? The current portal
+  is being replaced in about 14 months, so the requirement must not depend on it.
+- Which statuses does the customer actually see? What do they see while the complaint is
+  "awaiting customer info", after it has been escalated as a regulatory complaint, or once
+  the 14-day closure letter has gone out?
+- If you did this, bring it to the showcase: 2 minutes, the wireframe plus the gaps it exposed.
+
+---
+
 ## End of Block 3 checklist
 
 Before Retro 3 at 15:15:
@@ -308,7 +379,7 @@ Before Retro 3 at 15:15:
 - [ ] You can explain the difference between grounded and ungrounded AI output
 
 **Pair BC:**
-- [ ] All four reviews completed
+- [ ] All four reviews and the pre-mortem completed
 - [ ] Pre-steering-committee review document exists and is saved
 - [ ] You can name at least one finding that was a false positive and one that was real
 - [ ] Readiness status determined and you can defend it

@@ -82,6 +82,27 @@ error instead of a diagram, don't debug the syntax yourself first: paste the bro
 error message back to your AI chat tool and ask it to fix it. This is usually faster and more
 reliable than fixing it by hand.
 
+## What Mermaid can and can't draw
+
+AI will happily claim it has produced "a BPMN diagram in Mermaid". It hasn't: Mermaid has no
+BPMN. Know what the tool supports before you ask for it.
+
+| You want | In Mermaid? | What to do instead |
+|----------|-------------|--------------------|
+| Process flow with decisions | Yes: `flowchart` | Use `subgraph` blocks to fake swimlanes per role |
+| Who talks to whom, in order | Yes: `sequenceDiagram` | |
+| Domain model | Yes: `classDiagram` or `erDiagram` | |
+| Lifecycle of one thing (e.g. complaint statuses) | Yes: `stateDiagram-v2` | |
+| System context / containers (C4) | Partly: C4 support is experimental | PlantUML C4 or Structurizr if it needs to be exact |
+| BPMN | No | Call your flowchart a process flow, not BPMN. For real BPMN use a modelling tool such as bpmn.io |
+| UML use case diagram | No | PlantUML has one; AI writes PlantUML as easily as Mermaid |
+| Decision table (DMN) | No | Ask AI for a plain table: conditions as columns, one rule per row |
+| ArchiMate | No | A dedicated tool such as Archi |
+
+The rule of thumb: if the notation has a strict standard behind it (BPMN, DMN, ArchiMate), a
+text diagram will only ever approximate it. That's often fine for thinking and discussing,
+but say so when you share it.
+
 ## Where you'll use this today
 
 Diagrams come up when your team builds a domain model or represents a process flow from the

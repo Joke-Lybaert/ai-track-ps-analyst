@@ -132,17 +132,15 @@ Your job: use your AI tool's agent mode to restructure the entire requirements b
 in a single coordinated operation. You may not edit individual files manually.
 Everything goes through the agent.
 
-This block will teach you more about AI agents than any tutorial.
-
 ---
 
 ### Before you start: understand what you're doing
 
-Agent mode (available in Copilot Chat via "Agent" mode, or equivalent in your AI tool) can
+Agent mode (available in GitHub Copilot Chat via "Agent" mode, not in M365 Copilot) can
 read and edit multiple files in a single operation. It is not magic. It operates on the files
 you have in your workspace, makes a plan, and executes changes step by step.
 
-> **No IDE, and can't install one?** Expect this to be the normal case for most of today, not
+> **No IDE, and can't install one?** Expect this to be the normal case for most of the day, not
 > an exception. Open the Meridian requirements workspace in a free **GitHub Codespace** instead
 > (Code → Codespaces → Create codespace, on the repo's GitHub page; ask your coach for the
 > link), a full VS Code running in your browser, nothing to install. Enable **GitHub Copilot
