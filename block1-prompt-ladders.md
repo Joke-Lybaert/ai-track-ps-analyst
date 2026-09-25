@@ -327,10 +327,10 @@ Before Retro 1 at 11:00, your team should be able to answer yes to:
 - [ ] (If you got to it) Prompt 6: stakeholder questions exist for the main open questions
 
 **Pair CD:**
-- [ ] Glossary exists with at least the 10 core terms defined
-- [ ] Domain model diagram exists and renders in mermaid.live without errors
-- [ ] RACI map exists
-- [ ] Requirements package scaffold exists and has been shared with Pair AB
+- [x] Glossary exists with at least the 10 core terms defined
+- [x] Domain model diagram exists and renders in mermaid.live without errors
+- [x] RACI map exists
+- [x] Requirements package scaffold exists and has been shared with Pair AB
 
 **Both pairs together:**
 - [ ] Glossary terms and backlog terminology are consistent (deal with mismatches now)
